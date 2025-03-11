@@ -19,7 +19,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: #ff4444;
+            background-color: #ff6666;
             color: white;
             border: none;
             cursor: pointer;
@@ -64,19 +64,37 @@
     <script>
         const audio = document.getElementById('audioElement');
         const button = document.querySelector('.sound-button');
-
+    
+        // Функция переключения звука
         function toggleSound() {
             if(audio.paused) {
                 audio.currentTime = 0;
                 audio.play();
-                button.textContent = 'Стоп';
-                button.classList.add('playing');
+                updateButtonState(true);
             } else {
                 audio.pause();
-                button.textContent = 'Играть';
-                button.classList.remove('playing');
+                updateButtonState(false);
             }
         }
+    
+        // Функция обновления состояния кнопки
+        function updateButtonState(isPlaying) {
+            button.textContent = isPlaying ? 'Стоп' : 'Воспроизвести';
+            isPlaying 
+                ? button.classList.add('playing') 
+                : button.classList.remove('playing');
+        }
+    
+        // Обработчик окончания звука
+        audio.addEventListener('ended', () => {
+            updateButtonState(false);
+        });
+    
+        // Обработчик ошибок (опционально)
+        audio.addEventListener('error', () => {
+            console.error('Ошибка загрузки звука');
+            updateButtonState(false);
+        });
     </script>
 </body>
 </html>
