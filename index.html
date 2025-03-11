@@ -15,25 +15,31 @@
             font-family: Arial, sans-serif;
         }
 
-        .sound-button {
-            padding: 20px 40px;
-            font-size: 24px;
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.1s, background-color 0.3s;
-        }
+           .sound-button {
+        width: 100px;         /* Диаметр кнопки */
+        height: 100px;        /* Должен совпадать с шириной */
+        border-radius: 50%;   /* Делаем круг */
+        font-size: 16px;      /* Размер текста */
+        background-color: #ff4444;
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+        display: flex;        /* Для центрирования текста */
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
 
-        .sound-button:hover {
-            background-color: #ff0000;
-        }
+    .sound-button:hover {
+        background-color: #ff0000;
+        transform: scale(1.05);
+    }
 
-        .sound-button:active {
-            transform: scale(0.95);
-        }
+    .sound-button:active {
+        transform: scale(0.95);
+    }
     </style>
 </head>
 <body>
