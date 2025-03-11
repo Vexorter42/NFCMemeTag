@@ -11,39 +11,50 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: black;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
 
-           .sound-button {
-        width: 150px;         /* Диаметр кнопки */
-        height: 150px;        /* Должен совпадать с шириной */
-        border-radius: 50%;   /* Делаем круг */
-        font-size: 16px;      /* Размер текста */
-        background-color: #ff4444;
-        color: white;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s;
-        display: flex;        /* Для центрирования текста */
-        justify-content: center;
-        align-items: center;
-        margin: 20px;
-    }
+        .sound-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
 
-    .sound-button:hover {
-        background-color: #ff0000;
-        transform: scale(1.05);
-    }
+        .sound-button:hover {
+            background-color: #ff0000;
+            transform: scale(1.05);
+        }
 
-    .sound-button:active {
-        transform: scale(0.95);
-    }
+        .sound-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Стиль для активного состояния */
+        .sound-button.playing {
+            background-color: #00cc00;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
-    <button class="sound-button" onclick="playSound()">Play Sound</button>
+    <button class="sound-button" onclick="toggleSound()">Play</button>
 
     <audio id="audioElement">
         <source src="STRIPUHA.mp3" type="audio/mpeg">
@@ -51,12 +62,20 @@
     </audio>
 
     <script>
-        function playSound() {
-            const audio = document.getElementById('audioElement');
-            audio.currentTime = 0; // Перемотка звука в начало
-            audio.play().catch(error => {
-                console.log('Audio playback error:', error);
-            });
+        const audio = document.getElementById('audioElement');
+        const button = document.querySelector('.sound-button');
+
+        function toggleSound() {
+            if(audio.paused) {
+                audio.currentTime = 0;
+                audio.play();
+                button.textContent = 'Stop';
+                button.classList.add('playing');
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+                button.classList.remove('playing');
+            }
         }
     </script>
 </body>
