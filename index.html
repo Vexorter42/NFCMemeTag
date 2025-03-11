@@ -11,7 +11,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #black;
             font-family: Arial, sans-serif;
         }
 
@@ -69,11 +69,11 @@
             if(audio.paused) {
                 audio.currentTime = 0;
                 audio.play();
-                button.textContent = 'Stop';
+                button.textContent = 'Остановить';
                 button.classList.add('playing');
             } else {
                 audio.pause();
-                button.textContent = 'Play';
+                button.textContent = 'Играть';
                 button.classList.remove('playing');
             }
         }
