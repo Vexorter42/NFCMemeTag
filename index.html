@@ -11,13 +11,13 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #black;
+            background-color: black;
             font-family: Arial, sans-serif;
         }
 
         .sound-button {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             background-color: #ff4444;
             color: white;
@@ -69,7 +69,7 @@
             if(audio.paused) {
                 audio.currentTime = 0;
                 audio.play();
-                button.textContent = 'Остановить';
+                button.textContent = 'Стоп';
                 button.classList.add('playing');
             } else {
                 audio.pause();
