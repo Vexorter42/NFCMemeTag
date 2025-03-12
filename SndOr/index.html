@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,6 @@
             transform: scale(0.95);
         }
 
-        /* Стиль для активного состояния */
         .sound-button.playing {
             background-color: #00cc00;
             animation: pulse 1.5s infinite;
@@ -54,47 +53,33 @@
     </style>
 </head>
 <body>
-    <button class="sound-button" onclick="toggleSound()">Play</button>
+    <button class="sound-button" onclick="toggleSound()">Играть</button>
 
-    <audio id="audioElement">
+    <audio id="audioElement" loop>
         <source src="STON.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        Ваш браузер не поддерживает аудио элементы.
     </audio>
 
     <script>
         const audio = document.getElementById('audioElement');
         const button = document.querySelector('.sound-button');
-    
-        // Функция переключения звука
+
         function toggleSound() {
             if(audio.paused) {
                 audio.currentTime = 0;
                 audio.play();
-                updateButtonState(true);
+                button.textContent = 'Стоп';
+                button.classList.add('playing');
+                audio.loop = true; // Явно включаем зацикливание
             } else {
                 audio.pause();
-                updateButtonState(false);
+                audio.currentTime = 0;
+                button.textContent = 'Играть';
+                button.classList.remove('playing');
             }
         }
-    
-        // Функция обновления состояния кнопки
-        function updateButtonState(isPlaying) {
-            button.textContent = isPlaying ? 'Стоп' : 'Играть';
-            isPlaying 
-                ? button.classList.add('playing') 
-                : button.classList.remove('playing');
-        }
-    
-        // Обработчик окончания звука
-        audio.addEventListener('ended', () => {
-            updateButtonState(false);
-        });
-    
-        // Обработчик ошибок (опционально)
-        audio.addEventListener('error', () => {
-            console.error('Ошибка загрузки звука');
-            updateButtonState(false);
-        });
+
+        // Убираем обработчик 'ended' так как он больше не нужен
     </script>
 </body>
 </html>
