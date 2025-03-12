@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,39 @@
             margin: 0;
             background-color: black;
             font-family: Arial, sans-serif;
+            position: relative;
         }
 
+        /* Стили для верхней кнопки */
+        .top-button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            background-color: #8A2BE2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .top-button:hover {
+            background-color: #6A1B9A;
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .top-button:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        /* Остальные стили остаются без изменений */
         .sound-button {
-            width: 150px;
-            height: 150px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             background-color: #ff6666;
             color: white;
@@ -40,7 +68,6 @@
             transform: scale(0.95);
         }
 
-        /* Стиль для активного состояния */
         .sound-button.playing {
             background-color: #00cc00;
             animation: pulse 1.5s infinite;
@@ -54,47 +81,35 @@
     </style>
 </head>
 <body>
-    <button class="sound-button" onclick="toggleSound()">Play</button>
+    <!-- Добавленная кнопка с ссылкой -->
+    <a href="https://t.me/Vexkon" class="top-button" target="_blank">@Vexorter</a>
 
-    <audio id="audioElement">
+    <!-- Основная кнопка звука -->
+    <button class="sound-button" onclick="toggleSound()">Играть</button>
+
+    <audio id="audioElement" loop>
         <source src="STON.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        Ваш браузер не поддерживает аудио элементы.
     </audio>
 
     <script>
         const audio = document.getElementById('audioElement');
         const button = document.querySelector('.sound-button');
-    
-        // Функция переключения звука
+
         function toggleSound() {
             if(audio.paused) {
                 audio.currentTime = 0;
                 audio.play();
-                updateButtonState(true);
+                button.textContent = '';
+                button.classList.add('playing');
+                audio.loop = true;
             } else {
                 audio.pause();
-                updateButtonState(false);
+                audio.currentTime = 0;
+                button.textContent = 'Играть';
+                button.classList.remove('playing');
             }
         }
-    
-        // Функция обновления состояния кнопки
-        function updateButtonState(isPlaying) {
-            button.textContent = isPlaying ? 'Стоп' : 'Играть';
-            isPlaying 
-                ? button.classList.add('playing') 
-                : button.classList.remove('playing');
-        }
-    
-        // Обработчик окончания звука
-        audio.addEventListener('ended', () => {
-            updateButtonState(false);
-        });
-    
-        // Обработчик ошибок (опционально)
-        audio.addEventListener('error', () => {
-            console.error('Ошибка загрузки звука');
-            updateButtonState(false);
-        });
     </script>
 </body>
 </html>
