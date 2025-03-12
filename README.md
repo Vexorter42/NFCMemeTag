@@ -12,7 +12,7 @@
 - 12.03: Обновил звук стонов на более правильный у [Snd.Or](https://github.com/Vexorter42/NFCMemeTag/tree/main/o), а так же немного подправил сам сайт.
 
 # English
-Hi, this is a simple website with a button for trending tiktok videos, the so-called SoundTag, not all cards are suitable, bank cards do not work, school or student passes work, **CARD DATA is NOT ERASED** (unless of course you do it yourself). Upload a tag or card to the NFC via the NFC Tools app. <br>
+Hi, this is a simple website with a button for trending tiktok videos, the so-called SoundTag, not all cards are suitable, bank cards do not work, school or student passes work, **CARD DATA IS NOT ERASED** (unless of course you do it yourself). Upload a tag or card to the NFC via the NFC Tools app. <br>
 ### In order to download the sound, go to:
 - "Record" and click "Add record". <br/>
 - Then click "URL/URI" and enter the link below without https//, click "OK". <br/>
