@@ -8,6 +8,7 @@
 **Ссылка на сайт для загрузки на NFC карту: https://vexorter42.github.io/NFCMemeTag/o/. <br/>**
 Ссылка на ТГ канал где будут голосования за звук на день: [Телега](https://t.me/Vexkon). <br>
 ЭТО ФИКСИРОВАННЫЙ ЗВУК СТОНОВ!!!
+
 # English
 Hi, this is a simple website with a button for trending tiktok videos, the so-called SoundTag, not all cards are suitable, bank cards do not work, school or student passes work, **CARD DATA IS NOT ERASED** (unless of course you do it yourself). Upload a tag or card to the NFC via the NFC Tools app. <br>
 ### In order to download the sound, go in:
@@ -16,5 +17,5 @@ Hi, this is a simple website with a button for trending tiktok videos, the so-ca
 - And finally click "Write", attach an NFC card or tag and you're done. <br><br>
 
 **Link to the website for downloading to the NFC card: https://vexorter42.github.io/NFCMemeTag/o/. <br/>**
-Link to the TG channel where there will be voting for sound for the day: [Telegramm](https://t.me/Vexkon ). <br>
+Link to the TG channel where there will be voting for sound for the day: [Telegram](https://t.me/Vexkon). <br>
 IT'S A FIXED MOANING SOUND!!!
