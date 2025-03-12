@@ -13,11 +13,39 @@
             margin: 0;
             background-color: black;
             font-family: Arial, sans-serif;
+            position: relative;
         }
 
+        /* Стили для верхней кнопки */
+        .top-button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            background-color: #8A2BE2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .top-button:hover {
+            background-color: #6A1B9A;
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .top-button:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        /* Остальные стили остаются без изменений */
         .sound-button {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             background-color: #ff6666;
             color: white;
@@ -53,6 +81,10 @@
     </style>
 </head>
 <body>
+    <!-- Добавленная кнопка с ссылкой -->
+    <a href="https://t.me/Vexkon" class="top-button" target="_blank">@Vexorter</a>
+
+    <!-- Основная кнопка звука -->
     <button class="sound-button" onclick="toggleSound()">Играть</button>
 
     <audio id="audioElement" loop>
@@ -70,7 +102,7 @@
                 audio.play();
                 button.textContent = 'Стоп';
                 button.classList.add('playing');
-                audio.loop = true; // Явно включаем зацикливание
+                audio.loop = true;
             } else {
                 audio.pause();
                 audio.currentTime = 0;
@@ -78,8 +110,6 @@
                 button.classList.remove('playing');
             }
         }
-
-        
     </script>
 </body>
 </html>
