@@ -9,7 +9,7 @@
 ⬆️ Данный сайт с кнопкой в которой звук выбирается голосованим в этом⬇️ ТГ канале, но [тут](https://github.com/Vexorter42/NFCMemeTag/tree/main/s) фиксированный звук с мема "Тут свага", ну а [тут](https://github.com/Vexorter42/NFCMemeTag/tree/main/o) по классике стоны🔥.<br/>
 Ссылка на ТГ канал где будут голосования за звук на день: [Телега](https://t.me/Vexkon). <br/><br/>
 ## Обновления:
-- 12.03: Обновил звук стонов на более правильный у [Snd.Or](https://github.com/Vexorter42/NFCMemeTag/tree/main/o), а так же немного подправил сам сайт.
+- 14.03: Обновил сайт, подправил анимацию и текст, а так же убрал возможность остановить воспроизведние звука.
 
 # English
 Hi, this is a simple website with a button for trending tiktok videos, the so-called SoundTag, not all cards are suitable, bank cards do not work, school or student passes work, **CARD DATA IS NOT ERASED** (unless of course you do it yourself). Upload a tag or card to the NFC via the NFC Tools app. <br>
@@ -22,4 +22,4 @@ Hi, this is a simple website with a button for trending tiktok videos, the so-ca
 ⬆️ This site has a button in which the sound is selected to vote in this⬇️ TG channel, but [here](https://github.com/Vexorter42/NFCMemeTag/tree/main/s) fixed sound from the meme "Here's a swag", but [here](https://github.com/Vexorter42/NFCMemeTag/tree/main/o) classic moans🔥.<br/>
 Link to the TG channel where there will be voting for sound for the day: [Telegram](https://t.me/Vexkon). <br/><br/>
 ## Updates:
-- 12.03: Updated the moaning sound to a more correct one at [Snd.Or](https://github.com/Vexorter42/NFCMemeTag/tree/main/o), as well as slightly tweaked the site itself.
+- 12.03: Updated the site, corrected the animation and text, and also removed the opportunity to stop the reproduction of sound.
