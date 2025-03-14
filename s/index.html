@@ -32,6 +32,24 @@
             transition: all 0.3s;
         }
 
+        .mute-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #666;
+            border: none;
+            border-radius: 5px;
+            cursor: default; /* Курсор по умолчанию */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            opacity: 0.5; /* Полупрозрачность для эффекта "неактивности" */
+        }
+
         .sound-button {
             width: 300px;
             height: 300px;
@@ -62,6 +80,10 @@
     </style>
 </head>
 <body>
+    
+    <!-- Новая кнопка -->
+    <button class="mute-button" title="Заглушка (не активна)">🔇</button>
+
     <a href="https://t.me/Vexkon" class="top-button" target="_blank">TG: Vexorter</a>
 
     <button class="sound-button" onclick="startPlayback(this)">Воспроизвести</button>
