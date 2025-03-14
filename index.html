@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,6 @@
             position: relative;
         }
 
-        /* Стили для верхней кнопки */
         .top-button {
             position: absolute;
             top: 20px;
@@ -33,16 +32,6 @@
             transition: all 0.3s;
         }
 
-        .top-button:hover {
-            background-color: #6A1B9A;
-            transform: translateX(-50%) scale(1.05);
-        }
-
-        .top-button:active {
-            transform: translateX(-50%) scale(0.95);
-        }
-
-        /* Остальные стили остаются без изменений */
         .sound-button {
             width: 300px;
             height: 300px;
@@ -51,41 +40,31 @@
             color: white;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             transition: all 0.3s;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 16px;
-        }
-
-        .sound-button:hover {
-            background-color: #ff0000;
-            transform: scale(1.05);
-        }
-
-        .sound-button:active {
-            transform: scale(0.95);
+            font-size: 24px;
         }
 
         .sound-button.playing {
             background-color: #00cc00;
             animation: pulse 1.5s infinite;
+            cursor: default;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.08); }
             100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <!-- Добавленная кнопка с ссылкой -->
-    <a href="https://t.me/Vexkon" class="top-button" target="_blank">@Vexorter</a>
+    <a href="https://t.me/Vexkon" class="top-button" target="_blank">Vexorter</a>
 
-    <!-- Основная кнопка звука -->
-    <button class="sound-button" onclick="toggleSound()">Играть</button>
+    <button class="sound-button" onclick="startPlayback(this)">Воспроизвести</button>
 
     <audio id="audioElement" loop>
         <source src="VEXORTER.mp3" type="audio/mpeg">
@@ -94,21 +73,19 @@
 
     <script>
         const audio = document.getElementById('audioElement');
-        const button = document.querySelector('.sound-button');
+        let isPlaying = false;
 
-        function toggleSound() {
-            if(audio.paused) {
-                audio.currentTime = 0;
-                audio.play();
-                button.textContent = '';
-                button.classList.add('playing');
-                audio.loop = true;
-            } else {
-                audio.pause();
-                audio.currentTime = 0;
-                button.textContent = 'Играть';
-                button.classList.remove('playing');
-            }
+        function startPlayback(button) {
+            if(isPlaying) return;
+            
+            audio.currentTime = 0;
+            audio.play();
+            button.classList.add('playing');
+            button.textContent = 'Воспроизводится';
+            isPlaying = true;
+            
+            // Убираем обработчик клика
+            button.onclick = null;
         }
     </script>
 </body>
